@@ -74,16 +74,16 @@
                                     $cat_description = $row['cat_description'];
                                 ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="marketing-index.html"><?php echo "$cat_name"; ?></a>
+                                        <a class="nav-link" href="category.php?id=<?php echo "$cat_name"; ?>"><?php echo "$cat_name"; ?></a>
                                     </li>
                                 <?php 
                                 }
                             ?>
                             
                         </ul>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-1" type="text" placeholder="How may I help?">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <form action="search.php" class="form-inline" method="POST">
+                            <input class="form-control mr-sm-1" name="search" type="text" placeholder="How may I help?">
+                            <button class="btn btn-outline-success my-2 my-sm-0" name="dosearch" type="submit">Search</button>
                         </form>
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">

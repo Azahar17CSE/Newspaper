@@ -6,8 +6,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-12 align-self-center">
-                        <h1>A Digital Online Newspaper Website</h1>
+                        <h2>A Digital Online Newspaper Website</h2>
                         <p class="lead"> Aenean ut hendrerit nibh. Duis non nibh id tortor consequat cursus at mattis felis. Praesent sed lectus et neque auctor dapibus in non velit. Donec faucibus odio semper risus rhoncus rutrum. Integer et ornare mauris.</p>
+                        <a href="#" class="btn btn-primary">Try for free</a>
                     </div>
                  
                 </div>
@@ -22,8 +23,25 @@
                             <div class="blog-custom-build">
                                 <!-- read all post -->
                                 <?php
-                                  $query = "SELECT * FROM post";
-                                  $result = mysqli_query($db,$query);
+
+                                  if (isset($_GET['dosearch'])) {
+                                      $search_content = $_GET['search'];
+
+                                      $sql = "SELECT * FROM post WHERE post_title LIKE '%$search_content%'";
+                                      echo $sql;
+                                      $catresult = mysqli_query($db,$sql);
+    
+                                      $totalpost = mysqli_num_rows($catresult);
+
+                                  if( $totalpost == 0 || $totalpost < 0 )
+                                  {
+                                  echo '<div class="alert alert-info"> OPPSS!! No post Found Yet..</div>';
+                                  }
+
+                                  else
+                                  {
+                                    $query = "SELECT * FROM post WHERE post_title LIKE '%$search_content%'";
+                                    $result = mysqli_query($db,$query);
 
                                   while($row = mysqli_fetch_assoc($result)){
                                     $post_id        = $row['post_id'];
@@ -99,6 +117,9 @@
                                       <hr class="invis">
                                     <?php
                                   }
+                                 
+                                  }
+                                }
                                 ?>
 
                                 

@@ -87,7 +87,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests</div>
+                            Pending Requests</div>
 
                                 <?php
                                     $query = "SELECT * FROM users WHERE status=0";
@@ -105,6 +105,7 @@
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
+                        <a href="user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>

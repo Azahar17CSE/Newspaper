@@ -95,8 +95,8 @@ h6 {
 
 #cta {
     margin-top: 4rem;
-    background: rgba(0, 0, 0, 0) url() no-repeat scroll center center / cover;
-    padding: 8rem 0;
+    background: rgba(0, 0, 0, 0) url(../../upload/news.jpg) no-repeat scroll center center / cover;
+    padding: 3rem 0;
     position: relative;
 }
 
